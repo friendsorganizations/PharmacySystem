@@ -30,7 +30,10 @@ namespace PharmacyServer
         void delete_product(string name, string type);
         [OperationContract]
         List<StockClass> showAll();
-     
+        [OperationContract]
+       void update(string name, string type, int price, int quantity, DateTime exp);
+
+
         [OperationContract]
         string GetData(int value);
 

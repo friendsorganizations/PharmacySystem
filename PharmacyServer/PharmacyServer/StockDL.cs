@@ -43,5 +43,22 @@ namespace PharmacyServer
             return stocklist;
 
         }
+        public void updateProduct(string name, string type, int price, int quantity, DateTime exp)
+        {
+            foreach (StockClass sel in stocklist)
+            {
+                if (sel.ItemName == name && sel.ItemType == type)
+
+                {
+                    sel.ItemPrice = price;
+                    sel.ItemQuantity = quantity;
+                    sel.ItemDate = exp;
+                    break;
+
+                }
+
+            }
+
+        }
     }
 }

@@ -133,18 +133,33 @@ namespace Pharmacy_software
 
         private void button2_Click(object sender, EventArgs e)
         {
-           
-         
+            selected_row = dataGridView1.CurrentCell.RowIndex;
+
+            DataGridViewRow newdata = dataGridView1.Rows[selected_row];
+            bool pr = true;
+            bool qr = true;
+            bool dt = true;
+            localhost.Service1 local = new localhost.Service1();
+
+            local.update(newdata.Cells[3].Value.ToString(), newdata.Cells[8].Value.ToString(), int.Parse(textBox3.Text), pr, int.Parse(textBox4.Text), qr, DateTime.Parse(dateTimePicker2.Text), dt);
+
+            BindingSource m = new BindingSource();
+            m.DataSource = local.showAll();
+            dataGridView1.DataSource = m;
+            dataGridView1.Columns[1].Visible = false;
+            dataGridView1.Columns[5].Visible = false;
+            dataGridView1.Columns[7].Visible = false;
+
         }
 
         private void cmdCellClick(object sender, DataGridViewCellEventArgs e)
         {
             selected_row = e.RowIndex;
             DataGridViewRow r = dataGridView1.Rows[selected_row];
-       
-            textBox4.Text = r.Cells[3].Value.ToString();
-            textBox3.Text = r.Cells[4].Value.ToString();
 
+            textBox4.Text = r.Cells[6].Value.ToString();
+            textBox3.Text = r.Cells[4].Value.ToString();
+            dateTimePicker2.Text = r.Cells[0].Value.ToString();
         }
 
         private void button4_Click(object sender, EventArgs e)
