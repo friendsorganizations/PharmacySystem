@@ -122,7 +122,11 @@ namespace PharmacyServer
             OrderDL d = new OrderDL();
             d.deleteOrder(index);
         }
-
+        public void update_Stock(string name, string type, int quantity)
+        {
+            StockDL l = new StockDL();
+            l.updateStock(name, type, quantity);
+        }
         public CompositeType GetDataUsingDataContract(CompositeType composite)
         {
             if (composite == null)

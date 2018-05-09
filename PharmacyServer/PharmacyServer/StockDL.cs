@@ -106,5 +106,18 @@ namespace PharmacyServer
             return formulalist;
 
         }
+        public void updateStock(string name, string type, int quantity)
+        {
+
+            foreach (StockClass s in stocklist)
+            {
+                if (s.ItemName == name && s.ItemType == type)
+                {
+                    s.ItemQuantity = s.ItemQuantity - quantity;
+                    break;
+                }
+            }
+
+        }
     }
 }

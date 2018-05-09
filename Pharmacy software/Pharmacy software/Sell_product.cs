@@ -105,10 +105,13 @@ namespace Pharmacy_software
             {
                 per_tottal = int.Parse(textBox4.Text) * int.Parse(row.Cells[4].Value.ToString());
                 s.add_order(row.Cells[3].Value.ToString(), comboBox2.Text, int.Parse(textBox4.Text), quant_spec, int.Parse(row.Cells[4].Value.ToString()), quant_spec, per_tottal, quant_spec);
-                //   t2.Rows.Add(textBox12.Text, comboBox2.Text, int.Parse(textBox4.Text), quant_spec, int.Parse(textBox1.Text), quant_spec, per_tottal, quant_spec);
-
                 t2.Rows.Add(row.Cells[3].Value.ToString(), int.Parse(row.Cells[4].Value.ToString()), quant_spec, comboBox2.Text, int.Parse(textBox4.Text), quant_spec, per_tottal, quant_spec);
                 dataGridView4.DataSource = t2;
+
+                s.update_Stock(row.Cells[3].Value.ToString(), row.Cells[8].Value.ToString(), int.Parse(textBox4.Text), quant_spec);
+                BindingSource j = new BindingSource();
+                j.DataSource = s.searchName(textBox12.Text);
+                dataGridView1.DataSource = j;
 
                 dataGridView1.Columns[1].Visible = false;
                 dataGridView1.Columns[5].Visible = false;

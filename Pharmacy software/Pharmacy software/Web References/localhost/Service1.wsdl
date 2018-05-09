@@ -91,6 +91,12 @@
   <wsdl:message name="IService1_deleteOrder_OutputMessage">
     <wsdl:part name="parameters" element="tns:deleteOrderResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_update_Stock_InputMessage">
+    <wsdl:part name="parameters" element="tns:update_Stock" />
+  </wsdl:message>
+  <wsdl:message name="IService1_update_Stock_OutputMessage">
+    <wsdl:part name="parameters" element="tns:update_StockResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_GetData_InputMessage">
     <wsdl:part name="parameters" element="tns:GetData" />
   </wsdl:message>
@@ -159,6 +165,10 @@
     <wsdl:operation name="deleteOrder">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/deleteOrder" message="tns:IService1_deleteOrder_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/deleteOrderResponse" message="tns:IService1_deleteOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="update_Stock">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/update_Stock" message="tns:IService1_update_Stock_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/update_StockResponse" message="tns:IService1_update_Stock_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetData">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
@@ -290,6 +300,15 @@
     </wsdl:operation>
     <wsdl:operation name="deleteOrder">
       <soap:operation soapAction="http://tempuri.org/IService1/deleteOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="update_Stock">
+      <soap:operation soapAction="http://tempuri.org/IService1/update_Stock" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
