@@ -67,6 +67,12 @@ namespace Pharmacy_software.localhost {
         
         private System.Threading.SendOrPostCallback undo_updateStockOperationCompleted;
         
+        private System.Threading.SendOrPostCallback addQuantexpNotifyOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback showQuantexpNotifyOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback QuantNotifyOperationCompleted;
+        
         private System.Threading.SendOrPostCallback GetDataOperationCompleted;
         
         private System.Threading.SendOrPostCallback GetDataUsingDataContractOperationCompleted;
@@ -165,6 +171,15 @@ namespace Pharmacy_software.localhost {
         
         /// <remarks/>
         public event undo_updateStockCompletedEventHandler undo_updateStockCompleted;
+        
+        /// <remarks/>
+        public event addQuantexpNotifyCompletedEventHandler addQuantexpNotifyCompleted;
+        
+        /// <remarks/>
+        public event showQuantexpNotifyCompletedEventHandler showQuantexpNotifyCompleted;
+        
+        /// <remarks/>
+        public event QuantNotifyCompletedEventHandler QuantNotifyCompleted;
         
         /// <remarks/>
         public event GetDataCompletedEventHandler GetDataCompleted;
@@ -790,6 +805,94 @@ namespace Pharmacy_software.localhost {
             if ((this.undo_updateStockCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.undo_updateStockCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/addQuantexpNotify", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.datacontract.org/2004/07/PharmacyServer")]
+        public StockClass[] addQuantexpNotify() {
+            object[] results = this.Invoke("addQuantexpNotify", new object[0]);
+            return ((StockClass[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void addQuantexpNotifyAsync() {
+            this.addQuantexpNotifyAsync(null);
+        }
+        
+        /// <remarks/>
+        public void addQuantexpNotifyAsync(object userState) {
+            if ((this.addQuantexpNotifyOperationCompleted == null)) {
+                this.addQuantexpNotifyOperationCompleted = new System.Threading.SendOrPostCallback(this.OnaddQuantexpNotifyOperationCompleted);
+            }
+            this.InvokeAsync("addQuantexpNotify", new object[0], this.addQuantexpNotifyOperationCompleted, userState);
+        }
+        
+        private void OnaddQuantexpNotifyOperationCompleted(object arg) {
+            if ((this.addQuantexpNotifyCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.addQuantexpNotifyCompleted(this, new addQuantexpNotifyCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/showQuantexpNotify", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.datacontract.org/2004/07/PharmacyServer")]
+        public StockClass[] showQuantexpNotify() {
+            object[] results = this.Invoke("showQuantexpNotify", new object[0]);
+            return ((StockClass[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void showQuantexpNotifyAsync() {
+            this.showQuantexpNotifyAsync(null);
+        }
+        
+        /// <remarks/>
+        public void showQuantexpNotifyAsync(object userState) {
+            if ((this.showQuantexpNotifyOperationCompleted == null)) {
+                this.showQuantexpNotifyOperationCompleted = new System.Threading.SendOrPostCallback(this.OnshowQuantexpNotifyOperationCompleted);
+            }
+            this.InvokeAsync("showQuantexpNotify", new object[0], this.showQuantexpNotifyOperationCompleted, userState);
+        }
+        
+        private void OnshowQuantexpNotifyOperationCompleted(object arg) {
+            if ((this.showQuantexpNotifyCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.showQuantexpNotifyCompleted(this, new showQuantexpNotifyCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/QuantNotify", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void QuantNotify(int index, [System.Xml.Serialization.XmlIgnoreAttribute()] bool indexSpecified) {
+            this.Invoke("QuantNotify", new object[] {
+                        index,
+                        indexSpecified});
+        }
+        
+        /// <remarks/>
+        public void QuantNotifyAsync(int index, bool indexSpecified) {
+            this.QuantNotifyAsync(index, indexSpecified, null);
+        }
+        
+        /// <remarks/>
+        public void QuantNotifyAsync(int index, bool indexSpecified, object userState) {
+            if ((this.QuantNotifyOperationCompleted == null)) {
+                this.QuantNotifyOperationCompleted = new System.Threading.SendOrPostCallback(this.OnQuantNotifyOperationCompleted);
+            }
+            this.InvokeAsync("QuantNotify", new object[] {
+                        index,
+                        indexSpecified}, this.QuantNotifyOperationCompleted, userState);
+        }
+        
+        private void OnQuantNotifyOperationCompleted(object arg) {
+            if ((this.QuantNotifyCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.QuantNotifyCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -1473,6 +1576,62 @@ namespace Pharmacy_software.localhost {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
     public delegate void undo_updateStockCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    public delegate void addQuantexpNotifyCompletedEventHandler(object sender, addQuantexpNotifyCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class addQuantexpNotifyCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal addQuantexpNotifyCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public StockClass[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((StockClass[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    public delegate void showQuantexpNotifyCompletedEventHandler(object sender, showQuantexpNotifyCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class showQuantexpNotifyCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal showQuantexpNotifyCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public StockClass[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((StockClass[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    public delegate void QuantNotifyCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]

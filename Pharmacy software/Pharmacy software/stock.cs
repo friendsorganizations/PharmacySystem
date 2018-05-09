@@ -68,6 +68,14 @@ namespace Pharmacy_software
             dataGridView2.Columns[1].Visible = false;
             dataGridView2.Columns[5].Visible = false;
             dataGridView2.Columns[7].Visible = false;
+
+
+            BindingSource p = new BindingSource();
+            p.DataSource = w.addQuantexpNotify();
+            dataGridView3.DataSource = p;
+            dataGridView3.Columns[1].Visible = false;
+            dataGridView3.Columns[5].Visible = false;
+            dataGridView3.Columns[7].Visible = false;
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -221,8 +229,7 @@ namespace Pharmacy_software
             bool qr = true;
             bool dt = true;
             localhost.Service1 local = new localhost.Service1();
-            //    local.showexpNotify();
-            //local.update( selected_row,pr,int.Parse(textBox3.Text), pr, int.Parse(textBox4.Text), pr);
+          
             local.update(newdata.Cells[3].Value.ToString(), newdata.Cells[8].Value.ToString(), int.Parse(textBox5.Text), pr, int.Parse(textBox6.Text), qr, DateTime.Parse(dateTimePicker3.Text), dt);
 
             local.delexpNotify(selected_row, pr);
@@ -246,6 +253,37 @@ namespace Pharmacy_software
             textBox6.Text = r.Cells[6].Value.ToString();
             textBox5.Text = r.Cells[4].Value.ToString();
             dateTimePicker3.Text = r.Cells[0].Value.ToString();
+        }
+
+        private void QuantUpdate_cellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            selected_row = e.RowIndex;
+            DataGridViewRow r = dataGridView3.Rows[selected_row];
+
+            textBox6.Text = r.Cells[6].Value.ToString();
+            textBox5.Text = r.Cells[4].Value.ToString();
+            dateTimePicker3.Text = r.Cells[0].Value.ToString();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            localhost.Service1 q = new localhost.Service1();
+            selected_row = dataGridView3.CurrentCell.RowIndex;
+
+            DataGridViewRow newdata = dataGridView3.Rows[selected_row];
+            bool pr = true;
+            bool qr = true;
+            bool dt = true;
+            localhost.Service1 local = new localhost.Service1();
+
+            local.update(newdata.Cells[3].Value.ToString(), newdata.Cells[8].Value.ToString(), int.Parse(textBox5.Text), pr, int.Parse(textBox6.Text), qr, DateTime.Parse(dateTimePicker3.Text), dt);
+            local.QuantNotify(selected_row, pr);
+         
+
+
+            BindingSource b = new BindingSource();
+            b.DataSource = local.showQuantexpNotify();
+            dataGridView3.DataSource = b;
         }
     }
 }

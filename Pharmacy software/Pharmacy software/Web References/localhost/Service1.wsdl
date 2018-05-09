@@ -121,6 +121,24 @@
   <wsdl:message name="IService1_undo_updateStock_OutputMessage">
     <wsdl:part name="parameters" element="tns:undo_updateStockResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_addQuantexpNotify_InputMessage">
+    <wsdl:part name="parameters" element="tns:addQuantexpNotify" />
+  </wsdl:message>
+  <wsdl:message name="IService1_addQuantexpNotify_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addQuantexpNotifyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_showQuantexpNotify_InputMessage">
+    <wsdl:part name="parameters" element="tns:showQuantexpNotify" />
+  </wsdl:message>
+  <wsdl:message name="IService1_showQuantexpNotify_OutputMessage">
+    <wsdl:part name="parameters" element="tns:showQuantexpNotifyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_QuantNotify_InputMessage">
+    <wsdl:part name="parameters" element="tns:QuantNotify" />
+  </wsdl:message>
+  <wsdl:message name="IService1_QuantNotify_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QuantNotifyResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_GetData_InputMessage">
     <wsdl:part name="parameters" element="tns:GetData" />
   </wsdl:message>
@@ -209,6 +227,18 @@
     <wsdl:operation name="undo_updateStock">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/undo_updateStock" message="tns:IService1_undo_updateStock_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/undo_updateStockResponse" message="tns:IService1_undo_updateStock_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addQuantexpNotify">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/addQuantexpNotify" message="tns:IService1_addQuantexpNotify_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/addQuantexpNotifyResponse" message="tns:IService1_addQuantexpNotify_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="showQuantexpNotify">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/showQuantexpNotify" message="tns:IService1_showQuantexpNotify_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/showQuantexpNotifyResponse" message="tns:IService1_showQuantexpNotify_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QuantNotify">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/QuantNotify" message="tns:IService1_QuantNotify_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/QuantNotifyResponse" message="tns:IService1_QuantNotify_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetData">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
@@ -385,6 +415,33 @@
     </wsdl:operation>
     <wsdl:operation name="undo_updateStock">
       <soap:operation soapAction="http://tempuri.org/IService1/undo_updateStock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addQuantexpNotify">
+      <soap:operation soapAction="http://tempuri.org/IService1/addQuantexpNotify" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="showQuantexpNotify">
+      <soap:operation soapAction="http://tempuri.org/IService1/showQuantexpNotify" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QuantNotify">
+      <soap:operation soapAction="http://tempuri.org/IService1/QuantNotify" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

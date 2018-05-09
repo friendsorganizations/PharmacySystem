@@ -57,7 +57,14 @@ namespace PharmacyServer
 
         [OperationContract]
         void undo_updateStock(string name, string type, int quantity);
-   
+
+        [OperationContract]
+        List<StockClass> addQuantexpNotify();
+        [OperationContract]
+        List<StockClass> showQuantexpNotify();
+        [OperationContract]
+        void QuantNotify(int index);
+    
         [OperationContract]
         string GetData(int value);
 

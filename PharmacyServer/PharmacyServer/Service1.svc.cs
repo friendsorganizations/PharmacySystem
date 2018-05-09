@@ -150,6 +150,22 @@ namespace PharmacyServer
             s.undoupdateStock(name, type, quantity);
         }
 
+
+        public List<StockClass> addQuantexpNotify()
+        {
+            StockDL j = new StockDL();
+            return j.storeQuantityNotification();
+        }
+        public List<StockClass> showQuantexpNotify()
+        {
+            StockDL j = new StockDL();
+            return j.showQuantityNotification();
+        }
+        public void QuantNotify(int index)
+        {
+            StockDL j = new StockDL();
+            j.deleteQuantityNoty(index);
+        }
         public CompositeType GetDataUsingDataContract(CompositeType composite)
         {
             if (composite == null)
