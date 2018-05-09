@@ -127,6 +127,23 @@ namespace PharmacyServer
             StockDL l = new StockDL();
             l.updateStock(name, type, quantity);
         }
+
+        public List<StockClass> addexpNotify()
+        {
+            StockDL j = new StockDL();
+            return j.storeNotification();
+        }
+        public List<StockClass> showexpNotify()
+        {
+            StockDL j = new StockDL();
+            return j.showNotification();
+        }
+        public void delexpNotify(int index)
+        {
+            StockDL j = new StockDL();
+            j.deleteNoty(index);
+        }
+
         public CompositeType GetDataUsingDataContract(CompositeType composite)
         {
             if (composite == null)

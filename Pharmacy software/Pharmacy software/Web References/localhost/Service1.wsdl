@@ -97,6 +97,24 @@
   <wsdl:message name="IService1_update_Stock_OutputMessage">
     <wsdl:part name="parameters" element="tns:update_StockResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_addexpNotify_InputMessage">
+    <wsdl:part name="parameters" element="tns:addexpNotify" />
+  </wsdl:message>
+  <wsdl:message name="IService1_addexpNotify_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addexpNotifyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_showexpNotify_InputMessage">
+    <wsdl:part name="parameters" element="tns:showexpNotify" />
+  </wsdl:message>
+  <wsdl:message name="IService1_showexpNotify_OutputMessage">
+    <wsdl:part name="parameters" element="tns:showexpNotifyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_delexpNotify_InputMessage">
+    <wsdl:part name="parameters" element="tns:delexpNotify" />
+  </wsdl:message>
+  <wsdl:message name="IService1_delexpNotify_OutputMessage">
+    <wsdl:part name="parameters" element="tns:delexpNotifyResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_GetData_InputMessage">
     <wsdl:part name="parameters" element="tns:GetData" />
   </wsdl:message>
@@ -169,6 +187,18 @@
     <wsdl:operation name="update_Stock">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/update_Stock" message="tns:IService1_update_Stock_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/update_StockResponse" message="tns:IService1_update_Stock_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addexpNotify">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/addexpNotify" message="tns:IService1_addexpNotify_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/addexpNotifyResponse" message="tns:IService1_addexpNotify_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="showexpNotify">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/showexpNotify" message="tns:IService1_showexpNotify_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/showexpNotifyResponse" message="tns:IService1_showexpNotify_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="delexpNotify">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/delexpNotify" message="tns:IService1_delexpNotify_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/delexpNotifyResponse" message="tns:IService1_delexpNotify_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetData">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
@@ -309,6 +339,33 @@
     </wsdl:operation>
     <wsdl:operation name="update_Stock">
       <soap:operation soapAction="http://tempuri.org/IService1/update_Stock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addexpNotify">
+      <soap:operation soapAction="http://tempuri.org/IService1/addexpNotify" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="showexpNotify">
+      <soap:operation soapAction="http://tempuri.org/IService1/showexpNotify" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delexpNotify">
+      <soap:operation soapAction="http://tempuri.org/IService1/delexpNotify" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

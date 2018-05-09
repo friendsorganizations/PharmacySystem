@@ -59,6 +59,12 @@ namespace Pharmacy_software.localhost {
         
         private System.Threading.SendOrPostCallback update_StockOperationCompleted;
         
+        private System.Threading.SendOrPostCallback addexpNotifyOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback showexpNotifyOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback delexpNotifyOperationCompleted;
+        
         private System.Threading.SendOrPostCallback GetDataOperationCompleted;
         
         private System.Threading.SendOrPostCallback GetDataUsingDataContractOperationCompleted;
@@ -145,6 +151,15 @@ namespace Pharmacy_software.localhost {
         
         /// <remarks/>
         public event update_StockCompletedEventHandler update_StockCompleted;
+        
+        /// <remarks/>
+        public event addexpNotifyCompletedEventHandler addexpNotifyCompleted;
+        
+        /// <remarks/>
+        public event showexpNotifyCompletedEventHandler showexpNotifyCompleted;
+        
+        /// <remarks/>
+        public event delexpNotifyCompletedEventHandler delexpNotifyCompleted;
         
         /// <remarks/>
         public event GetDataCompletedEventHandler GetDataCompleted;
@@ -652,6 +667,94 @@ namespace Pharmacy_software.localhost {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/addexpNotify", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.datacontract.org/2004/07/PharmacyServer")]
+        public StockClass[] addexpNotify() {
+            object[] results = this.Invoke("addexpNotify", new object[0]);
+            return ((StockClass[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void addexpNotifyAsync() {
+            this.addexpNotifyAsync(null);
+        }
+        
+        /// <remarks/>
+        public void addexpNotifyAsync(object userState) {
+            if ((this.addexpNotifyOperationCompleted == null)) {
+                this.addexpNotifyOperationCompleted = new System.Threading.SendOrPostCallback(this.OnaddexpNotifyOperationCompleted);
+            }
+            this.InvokeAsync("addexpNotify", new object[0], this.addexpNotifyOperationCompleted, userState);
+        }
+        
+        private void OnaddexpNotifyOperationCompleted(object arg) {
+            if ((this.addexpNotifyCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.addexpNotifyCompleted(this, new addexpNotifyCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/showexpNotify", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.datacontract.org/2004/07/PharmacyServer")]
+        public StockClass[] showexpNotify() {
+            object[] results = this.Invoke("showexpNotify", new object[0]);
+            return ((StockClass[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void showexpNotifyAsync() {
+            this.showexpNotifyAsync(null);
+        }
+        
+        /// <remarks/>
+        public void showexpNotifyAsync(object userState) {
+            if ((this.showexpNotifyOperationCompleted == null)) {
+                this.showexpNotifyOperationCompleted = new System.Threading.SendOrPostCallback(this.OnshowexpNotifyOperationCompleted);
+            }
+            this.InvokeAsync("showexpNotify", new object[0], this.showexpNotifyOperationCompleted, userState);
+        }
+        
+        private void OnshowexpNotifyOperationCompleted(object arg) {
+            if ((this.showexpNotifyCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.showexpNotifyCompleted(this, new showexpNotifyCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/delexpNotify", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void delexpNotify(int index, [System.Xml.Serialization.XmlIgnoreAttribute()] bool indexSpecified) {
+            this.Invoke("delexpNotify", new object[] {
+                        index,
+                        indexSpecified});
+        }
+        
+        /// <remarks/>
+        public void delexpNotifyAsync(int index, bool indexSpecified) {
+            this.delexpNotifyAsync(index, indexSpecified, null);
+        }
+        
+        /// <remarks/>
+        public void delexpNotifyAsync(int index, bool indexSpecified, object userState) {
+            if ((this.delexpNotifyOperationCompleted == null)) {
+                this.delexpNotifyOperationCompleted = new System.Threading.SendOrPostCallback(this.OndelexpNotifyOperationCompleted);
+            }
+            this.InvokeAsync("delexpNotify", new object[] {
+                        index,
+                        indexSpecified}, this.delexpNotifyOperationCompleted, userState);
+        }
+        
+        private void OndelexpNotifyOperationCompleted(object arg) {
+            if ((this.delexpNotifyCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.delexpNotifyCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/GetData", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
         public string GetData(int value, [System.Xml.Serialization.XmlIgnoreAttribute()] bool valueSpecified) {
@@ -733,7 +836,7 @@ namespace Pharmacy_software.localhost {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -856,7 +959,7 @@ namespace Pharmacy_software.localhost {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -903,7 +1006,7 @@ namespace Pharmacy_software.localhost {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1271,6 +1374,62 @@ namespace Pharmacy_software.localhost {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
     public delegate void update_StockCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    public delegate void addexpNotifyCompletedEventHandler(object sender, addexpNotifyCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class addexpNotifyCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal addexpNotifyCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public StockClass[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((StockClass[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    public delegate void showexpNotifyCompletedEventHandler(object sender, showexpNotifyCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class showexpNotifyCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal showexpNotifyCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public StockClass[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((StockClass[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    public delegate void delexpNotifyCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]

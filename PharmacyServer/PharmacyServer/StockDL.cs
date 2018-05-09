@@ -8,6 +8,7 @@ namespace PharmacyServer
     public class StockDL
     {
         public static List<StockClass> stocklist = new List<StockClass>();
+        public static List<StockClass> noty = new List<StockClass>();
         public static void addProduct(StockClass product)
         {
             stocklist.Add(product);
@@ -119,5 +120,54 @@ namespace PharmacyServer
             }
 
         }
+
+        public List<StockClass> storeNotification()
+        {
+
+            ////  foreach(StockClass s in stocklist)
+            //  {
+            //      if (s.ItemDate <= DateTime.Now)
+            //      {
+            //          noty.Add(s);
+            //      }
+            //  }
+        //    bool pr = false;
+       //     int len = noty.Count-1, i, j;
+            //for (i = 0; i < len; i++)
+            //{
+
+            //    for (j = i + 1; j < len; j++)
+            //    {
+            //        if (noty[i].ItemName == noty[j].ItemName && noty[i].ItemType == noty[j].ItemType)
+            //        {
+            //            pr = true;
+
+            //        }
+            //    }
+            //}
+          //  if (!pr)
+          //  {
+                foreach (StockClass k in StockDL.stocklist)
+                {
+                    if (k.ItemDate <= DateTime.Now)
+                    {
+                        noty.Add(k);
+                    }
+                }
+         //   }
+            return noty;
+
+        }
+        public List<StockClass> showNotification()
+        {
+
+            return StockDL.noty;
+
+        }
+        public void deleteNoty(int index)
+        {
+            StockDL.noty.RemoveAt(index);
+        }
+
     }
 }

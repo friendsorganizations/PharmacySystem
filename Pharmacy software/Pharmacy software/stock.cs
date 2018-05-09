@@ -59,6 +59,15 @@ namespace Pharmacy_software
             dataGridView1.Columns[1].Visible = false;
             dataGridView1.Columns[5].Visible = false;
             dataGridView1.Columns[7].Visible = false;
+
+
+            localhost.Service1 w = new localhost.Service1();
+            BindingSource s = new BindingSource();
+            s.DataSource = w.addexpNotify();
+            dataGridView2.DataSource = s;
+            dataGridView2.Columns[1].Visible = false;
+            dataGridView2.Columns[5].Visible = false;
+            dataGridView2.Columns[7].Visible = false;
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -200,6 +209,43 @@ namespace Pharmacy_software
         private void button5_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void button5_Click_2(object sender, EventArgs e)
+        {
+            localhost.Service1 q = new localhost.Service1();
+            selected_row = dataGridView2.CurrentCell.RowIndex;
+
+            DataGridViewRow newdata = dataGridView2.Rows[selected_row];
+            bool pr = true;
+            bool qr = true;
+            bool dt = true;
+            localhost.Service1 local = new localhost.Service1();
+            //    local.showexpNotify();
+            //local.update( selected_row,pr,int.Parse(textBox3.Text), pr, int.Parse(textBox4.Text), pr);
+            local.update(newdata.Cells[3].Value.ToString(), newdata.Cells[8].Value.ToString(), int.Parse(textBox5.Text), pr, int.Parse(textBox6.Text), qr, DateTime.Parse(dateTimePicker3.Text), dt);
+
+            local.delexpNotify(selected_row, pr);
+
+
+            BindingSource b = new BindingSource();
+            b.DataSource = local.showexpNotify();
+            dataGridView2.DataSource = b;
+        }
+
+        private void viewtabClick(object sender, EventArgs e)
+        {
+         
+        }
+
+        private void notifycellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            selected_row = e.RowIndex;
+            DataGridViewRow r = dataGridView2.Rows[selected_row];
+
+            textBox6.Text = r.Cells[6].Value.ToString();
+            textBox5.Text = r.Cells[4].Value.ToString();
+            dateTimePicker3.Text = r.Cells[0].Value.ToString();
         }
     }
 }

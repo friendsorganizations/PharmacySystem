@@ -48,6 +48,12 @@ namespace PharmacyServer
         void deleteOrder(int index);
         [OperationContract]
         void update_Stock(string name, string type, int quantity);
+        [OperationContract]
+        List<StockClass> addexpNotify();
+        [OperationContract]
+        List<StockClass> showexpNotify();
+        [OperationContract]
+        void delexpNotify(int index);
 
         [OperationContract]
         string GetData(int value);
