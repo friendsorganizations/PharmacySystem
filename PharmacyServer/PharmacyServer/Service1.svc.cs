@@ -71,7 +71,17 @@ namespace PharmacyServer
             st.ItemDate = exp;
             StockDL.stocklist.Add(st);
         }
+        public void delete_product(string name, string type)
+        {
+            StockDL s = new StockDL();
+            s.deleteProduct(name, type);
 
+        }
+        public List<StockClass> showAll()
+        {
+            StockDL s = new StockDL();
+            return s.showProducts();
+        }
         public CompositeType GetDataUsingDataContract(CompositeType composite)
         {
             if (composite == null)

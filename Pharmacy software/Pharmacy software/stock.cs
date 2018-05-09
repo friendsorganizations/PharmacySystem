@@ -104,8 +104,18 @@ namespace Pharmacy_software
 
         private void button3_Click(object sender, EventArgs e)
         {
+            selected_row = dataGridView1.CurrentCell.RowIndex;
+            DataGridViewRow r = dataGridView1.Rows[selected_row];
+            localhost.Service1 w = new localhost.Service1();
+            w.delete_product(r.Cells[3].Value.ToString(), r.Cells[8].Value.ToString());
+            BindingSource s = new BindingSource();
+            s.DataSource = w.showAll();
+            dataGridView1.DataSource = s;
+            dataGridView1.Columns[1].Visible = false;
+            dataGridView1.Columns[5].Visible = false;
+            dataGridView1.Columns[7].Visible = false;
+            MessageBox.Show("Deleted successfully");
 
-           
         }
 
         private void textBox12_TextChanged(object sender, EventArgs e)
@@ -139,7 +149,14 @@ namespace Pharmacy_software
 
         private void button4_Click(object sender, EventArgs e)
         {
-            
+            localhost.Service1 s = new localhost.Service1();
+            BindingSource k = new BindingSource();
+            k.DataSource = s.showAll();
+            dataGridView1.DataSource = k;
+            dataGridView1.Columns[1].Visible = false;
+            dataGridView1.Columns[5].Visible = false;
+            dataGridView1.Columns[7].Visible = false;
+
         }
 
         private void button5_Click(object sender, EventArgs e)

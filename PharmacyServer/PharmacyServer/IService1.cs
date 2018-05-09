@@ -27,6 +27,11 @@ namespace PharmacyServer
         [OperationContract]
         void add(string name, string type, string formula, int price, int quantity, DateTime exp);
         [OperationContract]
+        void delete_product(string name, string type);
+        [OperationContract]
+        List<StockClass> showAll();
+     
+        [OperationContract]
         string GetData(int value);
 
         [OperationContract]
