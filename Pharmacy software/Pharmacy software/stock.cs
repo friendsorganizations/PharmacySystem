@@ -120,15 +120,27 @@ namespace Pharmacy_software
 
         private void textBox12_TextChanged(object sender, EventArgs e)
         {
-            
-           
-         
+
+            localhost.Service1 s = new localhost.Service1();
+            BindingSource k = new BindingSource();
+            k.DataSource = s.searchName(textBox12.Text);
+            dataGridView1.DataSource = k;
+            dataGridView1.Columns[1].Visible = false;
+            dataGridView1.Columns[5].Visible = false;
+            dataGridView1.Columns[7].Visible = false;
+
 
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-          
+            localhost.Service1 s = new localhost.Service1();
+            BindingSource k = new BindingSource();
+            k.DataSource = s.searchType(comboBox2.Text);
+            dataGridView1.DataSource = k;
+            dataGridView1.Columns[1].Visible = false;
+            dataGridView1.Columns[5].Visible = false;
+            dataGridView1.Columns[7].Visible = false;
         }
 
         private void button2_Click(object sender, EventArgs e)

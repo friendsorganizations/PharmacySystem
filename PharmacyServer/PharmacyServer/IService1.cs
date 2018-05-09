@@ -32,8 +32,12 @@ namespace PharmacyServer
         List<StockClass> showAll();
         [OperationContract]
        void update(string name, string type, int price, int quantity, DateTime exp);
-
-
+        [OperationContract]
+        List<StockClass> searchName(string name);
+        [OperationContract]
+        List<StockClass> searchFormula(string formula);
+        [OperationContract]
+        List<StockClass> searchType(string type);
         [OperationContract]
         string GetData(int value);
 
