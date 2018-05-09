@@ -157,5 +157,12 @@ namespace Pharmacy_software
             this.Hide();
             r.Show();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Receipt p = new Receipt();
+            this.Hide();
+            p.Show();
+        }
     }
 }

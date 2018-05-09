@@ -46,3 +46,9 @@ C:\Users\Muhammad Iqbal\Desktop\spr2\PharmacySystem\PharmacyServer\PharmacyServe
 C:\Users\Muhammad Iqbal\Desktop\spr2\PharmacySystem\PharmacyServer\PharmacyServer\obj\Debug\PharmacyServer.csprojResolveAssemblyReference.cache
 C:\Users\Muhammad Iqbal\Desktop\spr2\PharmacySystem\PharmacyServer\PharmacyServer\obj\Debug\PharmacyServer.dll
 C:\Users\Muhammad Iqbal\Desktop\spr2\PharmacySystem\PharmacyServer\PharmacyServer\obj\Debug\PharmacyServer.pdb
+C:\Users\usama\Desktop\sprint2\PharmacySystem\PharmacyServer\PharmacyServer\bin\PharmacyServer.dll.config
+C:\Users\usama\Desktop\sprint2\PharmacySystem\PharmacyServer\PharmacyServer\bin\PharmacyServer.dll
+C:\Users\usama\Desktop\sprint2\PharmacySystem\PharmacyServer\PharmacyServer\bin\PharmacyServer.pdb
+C:\Users\usama\Desktop\sprint2\PharmacySystem\PharmacyServer\PharmacyServer\obj\Debug\PharmacyServer.csprojResolveAssemblyReference.cache
+C:\Users\usama\Desktop\sprint2\PharmacySystem\PharmacyServer\PharmacyServer\obj\Debug\PharmacyServer.dll
+C:\Users\usama\Desktop\sprint2\PharmacySystem\PharmacyServer\PharmacyServer\obj\Debug\PharmacyServer.pdb
