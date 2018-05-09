@@ -164,3 +164,6 @@ C:\Users\Nauman Malik\Desktop\sprint3\PharmacySystem\Pharmacy software\Pharmacy 
 C:\Users\Nauman Malik\Desktop\sprint3\PharmacySystem\Pharmacy software\Pharmacy software\obj\Debug\Pharmacy_software.Sell_product.resources
 C:\Users\Nauman Malik\Desktop\sprint3\PharmacySystem\Pharmacy software\Pharmacy software\obj\Debug\Pharmacy_software.stock.resources
 C:\Users\Nauman Malik\Desktop\sprint3\PharmacySystem\Pharmacy software\Pharmacy software\obj\Debug\Pharmacy software.csproj.GenerateResource.Cache
+C:\Users\usama\Desktop\sprint 3\PharmacySystem\Pharmacy software\Pharmacy software\bin\Debug\Pharmacy software.exe.config
+C:\Users\usama\Desktop\sprint 3\PharmacySystem\Pharmacy software\Pharmacy software\obj\Debug\Pharmacy software.exe
+C:\Users\usama\Desktop\sprint 3\PharmacySystem\Pharmacy software\Pharmacy software\obj\Debug\Pharmacy software.pdb

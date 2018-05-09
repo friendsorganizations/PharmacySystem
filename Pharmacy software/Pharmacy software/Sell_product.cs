@@ -144,7 +144,10 @@ namespace Pharmacy_software
          bool ind_spec = true;
             localhost.Service1 w = new localhost.Service1();
            w.deleteOrder(selected_row, ind_spec);
-       BindingSource s = new BindingSource();
+
+            w.undo_updateStock(row.Cells[0].Value.ToString(), row.Cells[3].Value.ToString(), int.Parse(row.Cells[6].Value.ToString()), ind_spec);
+
+            BindingSource s = new BindingSource();
             s.DataSource = w.showorder();
             dataGridView4.DataSource = s;
 

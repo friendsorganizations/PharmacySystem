@@ -56,6 +56,9 @@ namespace PharmacyServer
         void delexpNotify(int index);
 
         [OperationContract]
+        void undo_updateStock(string name, string type, int quantity);
+   
+        [OperationContract]
         string GetData(int value);
 
         [OperationContract]

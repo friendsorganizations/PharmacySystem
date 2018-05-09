@@ -168,6 +168,22 @@ namespace PharmacyServer
         {
             StockDL.noty.RemoveAt(index);
         }
+        public void undoupdateStock(string name, string type, int quantity)
+        {
+            int sel = 0;
+
+            foreach (StockClass s in stocklist)
+            {
+                if (s.ItemName == name && s.ItemType == type)
+                {
+                    sel = StockDL.stocklist.IndexOf(s);
+                    break;
+                }
+            }
+            StockClass up = new StockClass();
+            up = stocklist.ElementAt(sel);
+            up.ItemQuantity = up.ItemQuantity + quantity;
+        }
 
     }
 }

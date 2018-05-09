@@ -144,6 +144,12 @@ namespace PharmacyServer
             j.deleteNoty(index);
         }
 
+        public void undo_updateStock(string name, string type, int quantity)
+        {
+            StockDL s = new StockDL();
+            s.undoupdateStock(name, type, quantity);
+        }
+
         public CompositeType GetDataUsingDataContract(CompositeType composite)
         {
             if (composite == null)

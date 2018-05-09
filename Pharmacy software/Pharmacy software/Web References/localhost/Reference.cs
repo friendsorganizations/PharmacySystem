@@ -65,6 +65,8 @@ namespace Pharmacy_software.localhost {
         
         private System.Threading.SendOrPostCallback delexpNotifyOperationCompleted;
         
+        private System.Threading.SendOrPostCallback undo_updateStockOperationCompleted;
+        
         private System.Threading.SendOrPostCallback GetDataOperationCompleted;
         
         private System.Threading.SendOrPostCallback GetDataUsingDataContractOperationCompleted;
@@ -160,6 +162,9 @@ namespace Pharmacy_software.localhost {
         
         /// <remarks/>
         public event delexpNotifyCompletedEventHandler delexpNotifyCompleted;
+        
+        /// <remarks/>
+        public event undo_updateStockCompletedEventHandler undo_updateStockCompleted;
         
         /// <remarks/>
         public event GetDataCompletedEventHandler GetDataCompleted;
@@ -751,6 +756,40 @@ namespace Pharmacy_software.localhost {
             if ((this.delexpNotifyCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.delexpNotifyCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/undo_updateStock", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void undo_updateStock([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string name, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string type, int quantity, [System.Xml.Serialization.XmlIgnoreAttribute()] bool quantitySpecified) {
+            this.Invoke("undo_updateStock", new object[] {
+                        name,
+                        type,
+                        quantity,
+                        quantitySpecified});
+        }
+        
+        /// <remarks/>
+        public void undo_updateStockAsync(string name, string type, int quantity, bool quantitySpecified) {
+            this.undo_updateStockAsync(name, type, quantity, quantitySpecified, null);
+        }
+        
+        /// <remarks/>
+        public void undo_updateStockAsync(string name, string type, int quantity, bool quantitySpecified, object userState) {
+            if ((this.undo_updateStockOperationCompleted == null)) {
+                this.undo_updateStockOperationCompleted = new System.Threading.SendOrPostCallback(this.Onundo_updateStockOperationCompleted);
+            }
+            this.InvokeAsync("undo_updateStock", new object[] {
+                        name,
+                        type,
+                        quantity,
+                        quantitySpecified}, this.undo_updateStockOperationCompleted, userState);
+        }
+        
+        private void Onundo_updateStockOperationCompleted(object arg) {
+            if ((this.undo_updateStockCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.undo_updateStockCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -1430,6 +1469,10 @@ namespace Pharmacy_software.localhost {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
     public delegate void delexpNotifyCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    public delegate void undo_updateStockCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
