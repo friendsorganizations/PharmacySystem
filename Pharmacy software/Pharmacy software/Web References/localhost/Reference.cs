@@ -37,6 +37,8 @@ namespace Pharmacy_software.localhost {
         
         private System.Threading.SendOrPostCallback forgetPasswordOperationCompleted;
         
+        private System.Threading.SendOrPostCallback addOperationCompleted;
+        
         private System.Threading.SendOrPostCallback GetDataOperationCompleted;
         
         private System.Threading.SendOrPostCallback GetDataUsingDataContractOperationCompleted;
@@ -90,6 +92,9 @@ namespace Pharmacy_software.localhost {
         
         /// <remarks/>
         public event forgetPasswordCompletedEventHandler forgetPasswordCompleted;
+        
+        /// <remarks/>
+        public event addCompletedEventHandler addCompleted;
         
         /// <remarks/>
         public event GetDataCompletedEventHandler GetDataCompleted;
@@ -220,6 +225,50 @@ namespace Pharmacy_software.localhost {
             if ((this.forgetPasswordCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.forgetPasswordCompleted(this, new forgetPasswordCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/add", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void add([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string name, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string type, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string formula, int price, [System.Xml.Serialization.XmlIgnoreAttribute()] bool priceSpecified, int quantity, [System.Xml.Serialization.XmlIgnoreAttribute()] bool quantitySpecified, System.DateTime exp, [System.Xml.Serialization.XmlIgnoreAttribute()] bool expSpecified) {
+            this.Invoke("add", new object[] {
+                        name,
+                        type,
+                        formula,
+                        price,
+                        priceSpecified,
+                        quantity,
+                        quantitySpecified,
+                        exp,
+                        expSpecified});
+        }
+        
+        /// <remarks/>
+        public void addAsync(string name, string type, string formula, int price, bool priceSpecified, int quantity, bool quantitySpecified, System.DateTime exp, bool expSpecified) {
+            this.addAsync(name, type, formula, price, priceSpecified, quantity, quantitySpecified, exp, expSpecified, null);
+        }
+        
+        /// <remarks/>
+        public void addAsync(string name, string type, string formula, int price, bool priceSpecified, int quantity, bool quantitySpecified, System.DateTime exp, bool expSpecified, object userState) {
+            if ((this.addOperationCompleted == null)) {
+                this.addOperationCompleted = new System.Threading.SendOrPostCallback(this.OnaddOperationCompleted);
+            }
+            this.InvokeAsync("add", new object[] {
+                        name,
+                        type,
+                        formula,
+                        price,
+                        priceSpecified,
+                        quantity,
+                        quantitySpecified,
+                        exp,
+                        expSpecified}, this.addOperationCompleted, userState);
+        }
+        
+        private void OnaddOperationCompleted(object arg) {
+            if ((this.addCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.addCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -456,6 +505,10 @@ namespace Pharmacy_software.localhost {
             }
         }
     }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    public delegate void addCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
