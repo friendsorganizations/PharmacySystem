@@ -117,6 +117,11 @@ namespace PharmacyServer
         {
             return OrderDL.orderlist;
         }
+        public void deleteOrder(int index)
+        {
+            OrderDL d = new OrderDL();
+            d.deleteOrder(index);
+        }
 
         public CompositeType GetDataUsingDataContract(CompositeType composite)
         {

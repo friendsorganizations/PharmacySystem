@@ -133,5 +133,29 @@ namespace Pharmacy_software
 
             comboBox2.Text = r.Cells[8].Value.ToString();
         }
+
+        private void cmdDeleteOrder(object sender, EventArgs e)
+        {
+            selected_row = dataGridView4.CurrentCell.RowIndex;
+            DataGridViewRow row = dataGridView4.Rows[selected_row];
+         bool ind_spec = true;
+            localhost.Service1 w = new localhost.Service1();
+           w.deleteOrder(selected_row, ind_spec);
+       BindingSource s = new BindingSource();
+            s.DataSource = w.showorder();
+            dataGridView4.DataSource = s;
+
+
+            dataGridView4.Columns[2].Visible = false;
+            dataGridView4.Columns[4].Visible = false;
+            dataGridView4.Columns[7].Visible = false;
+        }
+
+        private void mainToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form1 r = new Form1();
+            this.Hide();
+            r.Show();
+        }
     }
 }

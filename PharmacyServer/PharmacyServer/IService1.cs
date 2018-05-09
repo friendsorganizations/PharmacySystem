@@ -44,7 +44,8 @@ namespace PharmacyServer
 
         [OperationContract]
         List<OrderClass> showorder();
-
+        [OperationContract]
+        void deleteOrder(int index);
         [OperationContract]
         string GetData(int value);
 

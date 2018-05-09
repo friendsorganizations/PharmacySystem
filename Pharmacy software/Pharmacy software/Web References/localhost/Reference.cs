@@ -55,6 +55,8 @@ namespace Pharmacy_software.localhost {
         
         private System.Threading.SendOrPostCallback showorderOperationCompleted;
         
+        private System.Threading.SendOrPostCallback deleteOrderOperationCompleted;
+        
         private System.Threading.SendOrPostCallback GetDataOperationCompleted;
         
         private System.Threading.SendOrPostCallback GetDataUsingDataContractOperationCompleted;
@@ -135,6 +137,9 @@ namespace Pharmacy_software.localhost {
         
         /// <remarks/>
         public event showorderCompletedEventHandler showorderCompleted;
+        
+        /// <remarks/>
+        public event deleteOrderCompletedEventHandler deleteOrderCompleted;
         
         /// <remarks/>
         public event GetDataCompletedEventHandler GetDataCompleted;
@@ -574,6 +579,36 @@ namespace Pharmacy_software.localhost {
             if ((this.showorderCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.showorderCompleted(this, new showorderCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/deleteOrder", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void deleteOrder(int index, [System.Xml.Serialization.XmlIgnoreAttribute()] bool indexSpecified) {
+            this.Invoke("deleteOrder", new object[] {
+                        index,
+                        indexSpecified});
+        }
+        
+        /// <remarks/>
+        public void deleteOrderAsync(int index, bool indexSpecified) {
+            this.deleteOrderAsync(index, indexSpecified, null);
+        }
+        
+        /// <remarks/>
+        public void deleteOrderAsync(int index, bool indexSpecified, object userState) {
+            if ((this.deleteOrderOperationCompleted == null)) {
+                this.deleteOrderOperationCompleted = new System.Threading.SendOrPostCallback(this.OndeleteOrderOperationCompleted);
+            }
+            this.InvokeAsync("deleteOrder", new object[] {
+                        index,
+                        indexSpecified}, this.deleteOrderOperationCompleted, userState);
+        }
+        
+        private void OndeleteOrderOperationCompleted(object arg) {
+            if ((this.deleteOrderCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.deleteOrderCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -1189,6 +1224,10 @@ namespace Pharmacy_software.localhost {
             }
         }
     }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    public delegate void deleteOrderCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
