@@ -76,3 +76,9 @@ C:\Users\Muhammad Iqbal\Desktop\spr3\PharmacySystem\PharmacyServer\PharmacyServe
 C:\Users\Muhammad Iqbal\Desktop\spr3\PharmacySystem\PharmacyServer\PharmacyServer\obj\Debug\PharmacyServer.csprojResolveAssemblyReference.cache
 C:\Users\Muhammad Iqbal\Desktop\spr3\PharmacySystem\PharmacyServer\PharmacyServer\obj\Debug\PharmacyServer.dll
 C:\Users\Muhammad Iqbal\Desktop\spr3\PharmacySystem\PharmacyServer\PharmacyServer\obj\Debug\PharmacyServer.pdb
+E:\OOAD\OOD Project\PharmacySystem\PharmacyServer\PharmacyServer\bin\PharmacyServer.dll.config
+E:\OOAD\OOD Project\PharmacySystem\PharmacyServer\PharmacyServer\bin\PharmacyServer.dll
+E:\OOAD\OOD Project\PharmacySystem\PharmacyServer\PharmacyServer\bin\PharmacyServer.pdb
+E:\OOAD\OOD Project\PharmacySystem\PharmacyServer\PharmacyServer\obj\Debug\PharmacyServer.csprojResolveAssemblyReference.cache
+E:\OOAD\OOD Project\PharmacySystem\PharmacyServer\PharmacyServer\obj\Debug\PharmacyServer.dll
+E:\OOAD\OOD Project\PharmacySystem\PharmacyServer\PharmacyServer\obj\Debug\PharmacyServer.pdb
